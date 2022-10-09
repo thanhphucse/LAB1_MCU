@@ -91,7 +91,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint8_t count = 0;
+  int count = 0;
   while (1)
   {
     /* USER CODE END WHILE */
@@ -109,7 +109,8 @@ int main(void)
 	  if(count == 9) HAL_GPIO_WritePin(led9_GPIO_Port, led9_Pin, GPIO_PIN_SET);
 	  if(count == 10) HAL_GPIO_WritePin(led10_GPIO_Port, led10_Pin, GPIO_PIN_SET);
 	  if(count == 11) HAL_GPIO_WritePin(led11_GPIO_Port, led11_Pin, GPIO_PIN_SET);
-	  if(count == 12)
+
+	  if(count == 12)// turn off all led
 	  {
 		  HAL_GPIO_WritePin(led0_GPIO_Port, led0_Pin, GPIO_PIN_RESET);
 		  HAL_GPIO_WritePin(led1_GPIO_Port, led1_Pin, GPIO_PIN_RESET);
@@ -126,7 +127,7 @@ int main(void)
 		  count = 0;
 	  }
 
-	  count ++;
+	  count ++; // update count
 
 	  HAL_Delay(500);
 

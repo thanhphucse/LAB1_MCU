@@ -56,7 +56,7 @@ static void MX_GPIO_Init(void);
 /* USER CODE BEGIN 0 */
 void display7SEG(int num)
 {
-	if(num == 0)
+	if(num == 0) // segment g turn off
 	{
 		HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, GPIO_PIN_RESET);

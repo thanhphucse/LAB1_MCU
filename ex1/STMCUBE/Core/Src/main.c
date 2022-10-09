@@ -92,16 +92,16 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
+  // initial turn on for led-red, turn off for yellow-led
   HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
-  uint8_t count = 0;
+  int count = 0;
 
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
-	  if(count == 2)
+	  if(count == 2)// affter 2 seconds, 2 leds will toggle
 	  {
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
@@ -109,7 +109,7 @@ int main(void)
 	  }
 	  count += 1;
 
-	  HAL_Delay(1000);
+	  HAL_Delay(1000);// delay a second
   }
   /* USER CODE END 3 */
 }
