@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00015526  00000000  00000000  00024570  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000452a  00000000  00000000  00039a96  2**0
+ 17 .debug_line   0000452c  00000000  00000000  00039a96  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000796de  00000000  00000000  0003dfc0  2**0
+ 18 .debug_str    000796e4  00000000  00000000  0003dfc2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000b769e  2**0
+ 19 .comment      00000053  00000000  00000000  000b76a6  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000d34  00000000  00000000  000b76f4  2**2
+ 20 .debug_frame  00000d34  00000000  00000000  000b76fc  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -107,31 +107,31 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
  800015a:	f000 f85f 	bl	800021c <MX_GPIO_Init>
-  /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
- 800015e:	2201      	movs	r2, #1
+  // initial turn on for led-red, turn off for yellow-led
+  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
+ 800015e:	2200      	movs	r2, #0
  8000160:	2120      	movs	r1, #32
  8000162:	480f      	ldr	r0, [pc, #60]	; (80001a0 <main+0x54>)
  8000164:	f000 fbfc 	bl	8000960 <HAL_GPIO_WritePin>
-  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
- 8000168:	2200      	movs	r2, #0
+  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
+ 8000168:	2201      	movs	r2, #1
  800016a:	2140      	movs	r1, #64	; 0x40
  800016c:	480c      	ldr	r0, [pc, #48]	; (80001a0 <main+0x54>)
  800016e:	f000 fbf7 	bl	8000960 <HAL_GPIO_WritePin>
-  uint8_t count = 0;
+  int count = 0;
  8000172:	2300      	movs	r3, #0
- 8000174:	71fb      	strb	r3, [r7, #7]
+ 8000174:	607b      	str	r3, [r7, #4]
+
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
-	  if(count == 2)
- 8000176:	79fb      	ldrb	r3, [r7, #7]
+	  if(count == 2)// affter 2 seconds, 2 leds will toggle
+ 8000176:	687b      	ldr	r3, [r7, #4]
  8000178:	2b02      	cmp	r3, #2
  800017a:	d109      	bne.n	8000190 <main+0x44>
 	  {
@@ -145,17 +145,17 @@ int main(void)
  8000188:	f000 fc02 	bl	8000990 <HAL_GPIO_TogglePin>
 		  count = 0;
  800018c:	2300      	movs	r3, #0
- 800018e:	71fb      	strb	r3, [r7, #7]
+ 800018e:	607b      	str	r3, [r7, #4]
 	  }
 	  count += 1;
- 8000190:	79fb      	ldrb	r3, [r7, #7]
+ 8000190:	687b      	ldr	r3, [r7, #4]
  8000192:	3301      	adds	r3, #1
- 8000194:	71fb      	strb	r3, [r7, #7]
+ 8000194:	607b      	str	r3, [r7, #4]
 
-	  HAL_Delay(1000);
+	  HAL_Delay(1000);// delay a second
  8000196:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800019a:	f000 f95f 	bl	800045c <HAL_Delay>
-	  if(count == 2)
+	  if(count == 2)// affter 2 seconds, 2 leds will toggle
  800019e:	e7ea      	b.n	8000176 <main+0x2a>
  80001a0:	40010800 	.word	0x40010800
 

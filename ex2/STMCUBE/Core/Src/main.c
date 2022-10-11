@@ -91,6 +91,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   int Yellow_Count = 3;// yellow-led turn on 2 seconds
   int Red_Count = 6;// red-led turn on 5 seconds
   int Green_Count = 4;// green-led turn on 3 seconds
@@ -99,6 +100,10 @@ int main(void)
   int Red_Status = 0;// initial red-led turn off
   int Green_Status = 1; // initial green-led turn on
 
+  // initial turn off all three leds
+  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -109,13 +114,13 @@ int main(void)
 	  if(Green_Status == 1)
 	  {
 		  Green_Count --;
-		  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
 
 		  if(Green_Count == 0)
 		  {
 			 Green_Status = 0;// green-led turn off
 			 Green_Count = 3;// update time of green-led
-			 HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+			 HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
 			 Yellow_Status = 1;//yellow-led turn on
 		  }
 	  }
@@ -124,13 +129,13 @@ int main(void)
 	  if(Yellow_Status == 1)
 	  {
 		  Yellow_Count --;
-		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
 
 		  if(Yellow_Count == 0)
 		  {
 			  Yellow_Status = 0;// yellow-led turn off
 			  Yellow_Count = 3;// update time of yellow-led
-			  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
+			  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
 			  Red_Status = 1;// red-led turn on
 		  }
 	  }
@@ -139,15 +144,15 @@ int main(void)
 	  if(Red_Status == 1)
 	  {
 		  Red_Count --;
-		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
 
 		  if(Red_Count == 0)
 		  {
 			  Red_Status = 0;// red-led turn off
 			  Red_Count = 6;// update time of red-led
-			  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
+			  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
 
-			  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+			  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
 			  Green_Status = 1;// green-led turn on
 		  }
 	  }
