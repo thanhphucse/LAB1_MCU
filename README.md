@@ -47,12 +47,15 @@ VII. Exercise 7
     void clearAllClock () {
     // TODO
     }
+    
 VIII. Exercise 8
     Implement a function named setNumberOnClock(int num). The input for this function is from 0 to 11 and an appropriate
     LED is turn on. Present the source code of this function.
+    
 IX. Exercise 9 
     Implement a function named clearNumberOnClock(int num). The input for this function is from 0 to 11 and an appropriate
     LED is turn off.
+    
 X. Exercise 10
     Integrate the whole system and use 12 LEDs to display a clock. At a given time, there are only 3 LEDs are turn on for
     hour, minute and second information.
