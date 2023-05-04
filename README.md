@@ -42,6 +42,7 @@ VI. Exercise 6
 
     In this exercise, a new Proteus schematic is designed to simulate an analog clock, with 12 different number. The
     connections for 12 LEDs are supposed from PA4 to PA15 of the STM32. The arrangement of 12 LEDs is depicted as follows.
+    
     ![image](https://user-images.githubusercontent.com/106461205/236116236-697966ec-5a10-4a24-915e-5a6281bfdad9.png)
 
 VII. Exercise 7
