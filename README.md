@@ -1,4 +1,4 @@
-                                                    LAB1_MCU
+                                                    LAB1_MCU: LED ANIMATION
 
 I. Exercise 1
 
