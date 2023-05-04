@@ -6,20 +6,20 @@ I. Exercise 1
     is connected to PA6). The component suggested in this exercise is LED-YELLOW, which can be found from the 
     device list. In this exercise, the status of two LEDs are switched every 2 seconds, as demonstrated in the
     figure bellow.
-    ![image](https://user-images.githubusercontent.com/106461205/236115237-e84a9f6c-2065-4e37-8171-76735bbc8723.png)
+![image](https://user-images.githubusercontent.com/106461205/236115237-e84a9f6c-2065-4e37-8171-76735bbc8723.png)
 
 II. Exercise 2
     
     Extend the first exercise to simulate the behavior of a traffic light. A third LED, named LED-GREEN is added
     to the system, which is connected to PA7. A cycle in this traffic light is 5 seconds for the RED, 2 seconds
     for the YELLOW and 3 seconds for the GREEN. The LED-GREEN is also controlled by its negative pin.
-    ![image](https://user-images.githubusercontent.com/106461205/236116979-1bc70daa-4528-45e7-a6e0-bd7c5fafbfc3.png)
+![image](https://user-images.githubusercontent.com/106461205/236116979-1bc70daa-4528-45e7-a6e0-bd7c5fafbfc3.png)
     
 III. Exercise 3
 
     Extend to the 4-way traffic light. Arrange 12 LEDs in a nice shape to simulate the behaviors of a traffic light.
     A reference design can be found in the figure bellow.
-    ![image](https://user-images.githubusercontent.com/106461205/236115480-91707802-13a4-409c-b837-a3827776d1f7.png)
+![image](https://user-images.githubusercontent.com/106461205/236115480-91707802-13a4-409c-b837-a3827776d1f7.png)
 
 IV. Exercise 4
 
@@ -29,14 +29,14 @@ IV. Exercise 4
     
     Implement a function named display7SEG(int num). The input for this function is from 0 to 9 and the outputs are 
     listed as following:
-    ![image](https://user-images.githubusercontent.com/106461205/236115660-0d506f5f-0153-487c-97d3-420910078c6a.png)
+![image](https://user-images.githubusercontent.com/106461205/236115660-0d506f5f-0153-487c-97d3-420910078c6a.png)
     
 V. Exercise 5
 
     Integrate the 7SEG-LED to the 4 way traffic light. In this case, the 7SEG-LED is used to display countdown value.
     
     In this exercise, only source code is required to present. The function display7SEG in previous exercise can be re-used.
-    ![image](https://user-images.githubusercontent.com/106461205/236115875-e2d8a817-bccc-44f5-bf99-ea21e935eaf8.png)
+![image](https://user-images.githubusercontent.com/106461205/236115875-e2d8a817-bccc-44f5-bf99-ea21e935eaf8.png)
 
 VI. Exercise 6
 
