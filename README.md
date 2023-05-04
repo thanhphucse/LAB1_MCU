@@ -32,30 +32,39 @@ IV. Exercise 4
     ![image](https://user-images.githubusercontent.com/106461205/236115660-0d506f5f-0153-487c-97d3-420910078c6a.png)
     
 V. Exercise 5
+
     Integrate the 7SEG-LED to the 4 way traffic light. In this case, the 7SEG-LED is used to display countdown value.
     
     In this exercise, only source code is required to present. The function display7SEG in previous exercise can be re-used.
     ![image](https://user-images.githubusercontent.com/106461205/236115875-e2d8a817-bccc-44f5-bf99-ea21e935eaf8.png)
 
 VI. Exercise 6
+
     In this exercise, a new Proteus schematic is designed to simulate an analog clock, with 12 different number. The
     connections for 12 LEDs are supposed from PA4 to PA15 of the STM32. The arrangement of 12 LEDs is depicted as follows.
     ![image](https://user-images.githubusercontent.com/106461205/236116236-697966ec-5a10-4a24-915e-5a6281bfdad9.png)
 
 VII. Exercise 7
+
     Implement a function named clearAllClock() to turn off all 12 LEDs. Present the source code of this function.
+    
     void clearAllClock () {
+    
     // TODO
+    
     }
     
 VIII. Exercise 8
+
     Implement a function named setNumberOnClock(int num). The input for this function is from 0 to 11 and an appropriate
     LED is turn on. Present the source code of this function.
     
 IX. Exercise 9 
+
     Implement a function named clearNumberOnClock(int num). The input for this function is from 0 to 11 and an appropriate
     LED is turn off.
     
 X. Exercise 10
+
     Integrate the whole system and use 12 LEDs to display a clock. At a given time, there are only 3 LEDs are turn on for
     hour, minute and second information.
