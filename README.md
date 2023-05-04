@@ -13,7 +13,7 @@ II. Exercise 2
     Extend the first exercise to simulate the behavior of a traffic light. A third LED, named LED-GREEN is added
     to the system, which is connected to PA7. A cycle in this traffic light is 5 seconds for the RED, 2 seconds
     for the YELLOW and 3 seconds for the GREEN. The LED-GREEN is also controlled by its negative pin.
-    ![schematic-ex2](https://user-images.githubusercontent.com/106461205/236116066-6c106411-7689-49bf-acbb-243442779898.jpg)
+    ![image](https://user-images.githubusercontent.com/106461205/236116979-1bc70daa-4528-45e7-a6e0-bd7c5fafbfc3.png)
     
 III. Exercise 3
 
